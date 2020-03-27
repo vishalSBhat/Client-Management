@@ -1,0 +1,23 @@
+<%- include("navbar") -%>
+
+<img src="/images/advocate.png" class="dBlock mAuto logo" alt="Advocate">
+<form target="dummy" onsubmit="return signButton()" action="/" method="POST">
+  <div class="container container-fluid m-auto d-flex">
+    <div class="inline signIn-box my-4 mx-auto pb-2">
+      <input type="email" class="box email signIn-text" name="email" placeholder="Enter your e-mail" />
+      <input type="password" class="box signIn-text" name="password" placeholder="Enter your password" />
+      <button class="btn btn-md btn-outline-dark loginButton mt-4 mx-3 mb-5 py-2 px-3" type="submit">LOGIN</button>
+      <p class='mb-3 mt-0 pt-0 pb-0' style='display: none; color: red;'></p>
+    </div>
+  </div>
+  <div class="centre signUp">
+    <h6>Don't have an accoount??</h6>
+    <button class="btn btn-sm signUpButton" type="button">Sign Up</button>
+  </div>
+</form>
+<iframe style="display: none;" onload="verify()" class="dummy" name="dummy"></iframe>
+<form class="dummyForm" style="display: none;" action="/dummy" method="POST">
+  <input type="hidden" name="email"/>
+  <input type="hidden" name="id"/>
+</form>
+<%- include("footer") -%>

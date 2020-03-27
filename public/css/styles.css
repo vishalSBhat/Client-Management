@@ -1,0 +1,394 @@
+h1 {
+    font-size: 70px;
+    font-family: 'Baloo Thambi 2', cursive;
+}
+
+h3, .clientCard2 h3, .clientCard2 h4, .advocateCard2 > *, .c2, p{
+    font-family: 'Sen', sans-serif;
+}
+
+h2, .advocateCard1 > *, .c1, .clientCard1 h3, .clientCard1 h4{
+    font-family: 'Baloo Da 2', cursive;
+}
+
+h6{
+    font-size: 20px;
+    font-family: 'Comic Neue', cursive;
+    font-weight: 800;
+}
+
+#noRecordShow1, #noRecordShow2{
+    font-family: 'Special Elite', cursive;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.centre {
+    text-align: center;
+}
+
+.inline{
+    display: inline-block;
+}
+
+.dBlock{
+    display: block;
+}
+
+.mAuto{
+    margin: auto;
+}
+
+.logo {
+    height: 120px;
+    width: 120px;
+    margin-top: 15vh;
+    margin-bottom: 20px;
+}
+
+.logo1 {
+    height: 700px;
+    width: 900px;
+    float: right;
+    position: fixed;
+    right: 0;
+}
+
+.error-img {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+}
+
+.err-msg {
+    color: red;
+    font-size: 15px;
+    margin-left: 25px;
+}
+
+.box {
+    border: none;
+    border-bottom: 1px solid black;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.container {
+    justify-content: center;
+    align-items: center;
+}
+
+.signIn-box {
+    box-shadow: 0 5px 15px -5px black;
+    border-radius: 5px;
+    padding: 50px;
+    text-align: center;
+    width: 40%;
+}
+
+.signIn-text {
+    margin: 10px auto;
+    text-align: center;
+    width: 70%;
+}
+
+.box-empty-red {
+    border-bottom: 2px solid red;
+}
+
+.box:focus {
+    outline: none;
+    border: 0 none;
+    box-shadow: 0 5px 5px -5px black;
+}
+
+.signUp h4 {
+    font-size: 15px;
+}
+
+.loginButton {
+    font-weight: bold;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+
+.signUpButton {
+    background-color: black;
+    color: whitesmoke;
+}
+
+.signUp-box {
+    border-left: 5px solid black;
+    margin-left: 8%;
+}
+
+.signUp-text {
+    display: block;
+    margin: 25px;
+    padding: 15px;
+    outline: none;
+}
+
+.address {
+    resize: none;
+}
+
+.wrap {
+    display: flex;
+    align-content: flex-start;
+    clear: both;
+}
+
+.ph91 input:nth-child(1) {
+    width: 80px;
+    border-right: 1px solid black;
+}
+
+.signButton {
+    clear: both;
+}
+
+.passToggle{
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+    height: 61px;
+    width: 80px;
+    vertical-align: bottom;
+}
+
+.advocateCard {
+    background-color: #f1f3f4;
+    text-align: left;
+    box-shadow: 10px 10px 15px -15px black;
+    width: 500px;
+    max-width: 90vw;
+    height: fit-content;
+    max-height: 300px;
+    margin-right: 10px;
+}
+
+#docList, .contactDetails h3, .advocateCard1 > *, .advocateCard2 > *{
+    font-size: 20px;
+}
+
+.c1, .c2{
+    font-size: 18px;
+}
+
+.searchCont {
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.dropDown {
+    margin: auto;
+    position: relative;
+}
+
+.contactList {
+    margin-top: 10px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.clientName,
+.contactListItems {
+    cursor: auto;
+    width: 30%;
+}
+
+.clientName {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.contactListItems {
+    border: 1px solid black;
+    border-top: none;
+    font-size: 25px;
+    padding: 10px;
+    outline: none;
+}
+
+.contactListItems:hover {
+    background-color: #f1f3f4;
+    border-bottom-width: 2px;
+}
+
+.searchCont h4 {
+    margin: 20px auto 0;
+    font-size: 20px;
+}
+
+.clientCreate input {
+    width: 50%;
+}
+
+.clientCreate input[name="age"] {
+    text-align: center;
+    width: 15%;
+}
+
+img[data-toggle="dropdown"]:hover, #docList div img, .close:hover, .delete{
+    cursor: pointer;
+}
+
+#docList p, .dropdown-menu.show, .a:hover, .b:hover, .titem{
+    cursor: default;
+}
+
+.dropdown-menu.show{
+    transform: translate3d(0px, 30px, 1001px) !important;
+}
+
+.dropdown-item:active{
+    background-color: #dee3e2;
+    color: black;
+    outline: none;
+}
+
+.c {
+    display: none;
+    width: 100%;
+    padding: 25px;
+    position: fixed;
+    top: 20vh;
+    text-align: center;
+    z-index: 500;
+}
+
+.c div {
+    background-color: white;
+    width: fit-content;
+    margin: auto;
+    padding: 50px;
+    box-shadow: 10px 10px 100px -10px black;
+}
+
+.close{
+    float: right;
+}
+
+.caseDesc {
+    font-size: 20px;
+    margin: 40px auto;
+    padding: 25px;
+    width: 500px;
+    max-height: 400px;
+}
+
+.newCase input, .newCase textarea{
+    display: block;
+    margin: 20px;
+    padding: 20px;
+    width: 400px;
+}
+
+.recDisplay{
+    text-align: center;
+    margin: 50px 100px;
+}
+
+.a, .b{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.a:hover, .b:hover{
+    background-color: #f1f3f4;
+}
+
+.a{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.b{
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-left: none;
+}
+
+.delete{
+    display: none;
+    float: right;
+}
+
+.thead, .tbody{
+    text-align: center;
+    width: 80%;
+    max-width: 80%;
+}
+
+.thead{
+    margin-top: 5%;
+    margin-bottom: 2%;
+}
+
+.thead h3{
+    box-shadow: 0px 5px 5px #eeeeee, 
+        -5px 5px 5px #eeeeee, 5px 5px 5px #eeeeee;
+    font-size: 35px;
+    font-weight: bold;
+    margin: auto;
+    margin-bottom: 2%;
+    padding-bottom: 10px;
+}
+
+.titem{
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+    font-size: 25px;
+    padding: 25px;
+}
+
+.titem:nth-child(2){
+    font-size: 20px;
+    text-align: left;
+    padding: 25px 50px;
+}
+
+.titem:last-child{
+    border-right: 1px solid black;
+}
+
+.tbody:last-of-type .titem{
+    border-bottom: 1px solid black;
+}
+
+.advocateRec, .clientRec{
+    margin: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.newRec{
+    text-align: left;
+    margin: 0 0 5%;
+    padding: 25px;
+    width: fit-content;
+}
+
+.newRec *{
+    display: block;
+    margin: 35px 100px;
+    padding: 15px;
+}
+
+.newRec h2{
+    margin: 50px;
+}
+
+.newRec button{
+    padding: 5px 10px;
+}
+
+.m25 {
+    margin-left: 25px;
+}

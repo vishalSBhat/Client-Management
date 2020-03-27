@@ -1,0 +1,44 @@
+<%- include("navbar") -%>
+
+<div style="text-align: right;">
+    <div class="mr-4 mt-4 py-3 pl-4 pr-0 row inline advocateCard">
+        <div class="mb-2 col-4 advocateCard1" style="float: left;">
+            <h3>Name : </h3>
+            <h3>Qualification : </h3>
+            <h3>Address : </h3>
+        </div>
+        <div class="ml-2 mb-2 col-6 advocateCard2" style="float: left;">
+            <h3><%= lawyerDetails.name %></h3>
+            <h3><%= lawyerDetails.qualification %></h3>
+            <h3><%= lawyerDetails.address %></h3>
+        </div>
+        <div class="col-10 contactDetails">
+            <h3 class="my-1"><b>Contact Details :</b></h3>
+            <div style="clear: both;">
+                <div class="pl-3" style="float: left;"><h4 class="c1">mail-Id :</h4></div>
+                <div class="pl-3" style="float: left;"><h4 class="c2"><%= lawyerDetails.mail %></h4></div>
+            </div>
+            <div style="clear: both;">
+                <div class="pl-3" style="float: left;"><h4 class="c1">ph-No :</h4></div>
+                <div class="pl-3" style="float: left;"><h4 class="c2"><%= lawyerDetails.phNo %></h4></div>
+            </div>
+        </div>
+    </div>
+</div>
+<img onload="accountPage()" src="/images/advocate.png" class="mt-3 dBlock mAuto logo" alt="Advocate">
+<form action="/accountPage" method="POST">
+    <div class="container-fluid centre searchCont">
+        <input type="text" name="name" class="pl-3 pb-1 box mAuto clientName" placeholder="Search for your client..."
+            autocomplete="off" />
+        <div class="centre dropDown">
+            <div class="centre mAuto contactList" data-value="<%= clientList %>"></div>
+            <h6 class="pt-4 pb-2">Create new Client??</h6>
+            <button class="btn btn-sm signUpButton newClient-btn" type="button">Create</button>
+        </div>
+    </div>
+    <input type="hidden" name="advocateId" value="<%= lawyerDetails.id %> " />
+    <input type="hidden" name="clientId" />
+</form>
+
+
+<%- include("footer") -%>
