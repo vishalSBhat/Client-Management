@@ -516,7 +516,7 @@ img[data-toggle="dropdown"]:hover,
     .c div {
         box-sizing: border-box;
         padding: 25px;
-        width: 80vw;
+        width: 85vw;
     }
     .caseDesc {
         font-size: 16px;
@@ -553,6 +553,10 @@ img[data-toggle="dropdown"]:hover,
     .check {
         height: 20px;
         width: 20px;
+    }
+    .newCase input,
+    .newCase textarea{
+        width: 65vw;
     }
     .advocateRec,
     .clientRec {

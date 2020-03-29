@@ -117,7 +117,7 @@
     <div>
         <img title="Close" src="/images/close.png" alt="Close" id="newCaseClose" class="close">
         <input type="text" name="caseTitle" class="box" placeholder="Case Title" autocomplete="off">
-        <textarea name="caseDesc" class="box address" name="" rows="5" placeholder="Case Description"></textarea>
+        <textarea name="caseDesc" class="box address" rows="5" placeholder="Case Description"></textarea>
         <button type="submit" class="btn btn-lg btn-outline-dark" id="newCaseCreate"
             style="display: block; margin: 15px auto">Add</button>
     </div>
@@ -167,9 +167,9 @@
 
 <div class="clientRec" style="display: none;">
     <div class="row mAuto thead">
-        <h3 class="col-3">Date</h3>
-        <h3 class="col-6">Purpose</h3>
-        <h3 class="col-3">Amount</h3>
+        <h3 class="col-lg-3 col-3">Date</h3>
+        <h3 class="col-lg-6 col-5">Purpose</h3>
+        <h3 class="col-lg-3 col-4">Amount</h3>
     </div>
     <% if(records.client.length === 0){ %>
     <h2 id="noRecordShow2">No records to show</h2>
