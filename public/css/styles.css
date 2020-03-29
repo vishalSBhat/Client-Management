@@ -451,6 +451,9 @@ img[data-toggle="dropdown"]:hover,
     .contactListItems{
         font-size: 15px;
     }
+    h6{
+        font-family: 'Sen', sans-serif;
+    }
     .signIn-box {
         width: 100vh;
         max-width: 90vw;
@@ -590,6 +593,10 @@ img[data-toggle="dropdown"]:hover,
     .newRec h2 {
         margin: 0;
         padding-left: 0;
+    }
+    .phButton{
+        padding: 5px 10px;
+        font-size: 15px;
     }
 }
 

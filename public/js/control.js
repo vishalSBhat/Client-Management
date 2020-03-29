@@ -322,7 +322,7 @@ $(".deleteAlert div button").on("click", (ev) => {
 function justSet(){
     let id1 = "remDoc"+($("#docList div").length+1);
     let id2 = "div"+($("#docList div").length+1);
-    let newDoc = '<div class="m-2"><p style="display: inline-block" id='+id2+' class="my-2 mx-lg-3" data-status="2"><img src="/images/arrow.png" class="mr-lg-5 mr-2">'+$('#docList form input:nth-of-type(3)').val()+'</p><img id='+id1+' class="removeDoc" src="/images/minus.png" alt="Remove" style="display: none;"></div>'
+    let newDoc = '<div class="m-2"><p style="display: inline-block" id='+id2+' class="my-2 mx-lg-3" data-status="2"><img src="/images/arrow.png" class="mr-lg-5 mr-2">'+$('#docList form input:nth-of-type(3)').val()+'</p><img id='+id1+' class="removeDoc" src="/images/minus.png" alt="Remove"></div>'
     $("#docList form").before(newDoc);
     $("#docList form input:nth-of-type(2)").val("2");
 }
