@@ -1,36 +1,14 @@
 <%- include("navbar") %>
 
-<div class="row mt-5" style="max-width: 100%;text-align: left;">
-    <div class="col-8 mx-5 my-0 pb-0 pt-0 pl-5 inline clientCard">
-        <h1 class="m-0">Client Details</h1>
-        <div class="mx-5 my-5 clientCard1" style="float: left;">
-            <h3>Name : </h3>
-            <h3>Father's Name : </h3>
-            <h3>Age : </h3>
-            <h3>Address : </h3>
-            <h3>Client-Id : </h3>
-            <br>
-            <h4> mail-Id : </h4>
-            <h4>Phone Number : </h4>
-        </div>
-        <div class="my-5 pl-5 clientCard2" style="float: left;">
-            <h3><%= fname %> <%= lname %></h3>
-            <h3><%= fatherName %></h3>
-            <h3><%= age %> </h3>
-            <h3><%= address %></h3>
-            <h3><%= clientId %></h3>
-            <br>
-            <h4><%= mail %></h4>
-            <h4><%= phNo %></h4>
-        </div>
-    </div>
-    <div class="py-3 pl-4 pr-0 row inline advocateCard">
-        <div class="mb-2 col-4 advocateCard1" style="float: left;">
+<div style="max-width: 100%;text-align: left;overflow: hidden;">
+    <div class="mt-lg-4 py-lg-3 pl-lg-4 pr-0 inline advocateCard">
+        <img class="pin" src="/images/pin.png">
+        <div class="mb-2 advocateCard1" style="float: left;">
             <h3>Name : </h3>
             <h3>Qualification : </h3>
             <h3>Address : </h3>
         </div>
-        <div class="ml-2 mb-2 col-6 advocateCard2" style="float: left;">
+        <div class="ml-2 mb-2 advocateCard2" style="float: left;">
             <h3><%= lawyerDetails.fname %> <%= lawyerDetails.lname %></h3>
             <h3><%= lawyerDetails.qualification %></h3>
             <h3><%= lawyerDetails.address %></h3>
@@ -55,23 +33,54 @@
             </div>
         </div>
     </div>
-    <form class="mx-5 mb-3" action="/dummy-two" method="POST">
+    <div class="ml-lg-4 mt-lg-4" style="float: left;">
+        <img src="/images/advocate.png" class="logo cLogo m-0 ml-5 mt-3" alt="Advocate">
+        <h1 class="my-lg-5 ml-lg-3 mx-3 my-3 dBlock">Client Details</h1>
+    </div>
+</div>
+<div style="max-width: 100%;text-align: left;">
+    <div class="ml-lg-5 py-0 dBlock mAuto clientCard" style="overflow: hidden;">
+        <div class="mx-lg-5 ml-4 clientCard1" style="float: left;">
+            <h3>Name : </h3>
+            <h3>Father's Name : </h3>
+            <h3>Age : </h3>
+            <h3>Client-Id : </h3>
+            <h3>Address : </h3>
+        </div>
+        <div class="pl-lg-5 clientCard2" style="float: left;">
+            <h3><%= fname %> <%= lname %></h3>
+            <h3><%= fatherName %></h3>
+            <h3><%= age %> </h3>
+            <h3><%= clientId %></h3>
+            <h3><%= address %></h3>
+        </div>
+        <div class="pt-4" style="overflow: hidden;clear: both;">
+            <div class="mx-lg-5 ml-4 mb-5 clientCard1" style="float: left;">
+                <h4> mail-Id : </h4>
+                <h4>Phone Number : </h4>
+            </div>
+            <div class="mb-5 pl-lg-5 clientCard2" style="float: left;">
+                <h4><%= mail %></h4>
+                <h4><%= phNo %></h4>
+            </div>
+        </div>
+    </div>
+    <form class="mx-lg-5 mb-3 mx-3" action="/dummy-two" method="POST">
         <input type="hidden" name="advocateId" value="<%= lawyerDetails.id %>">
-        <button type="submit" class="mx-5 btn btn-lg btn-dark">Search Client</button>
+        <button type="submit" class="mx-lg-5 btn btn-lg btn-dark">Search Client</button>
     </form>
 </div>
 <hr>
-<br>
-<div class="mx-5 mb-5 px-5">
+<div class="mx-lg-5 my-lg-5 px-lg-5 m-3 p-2">
     <h4 style="cursor: pointer; font-family: 'Baloo Da 2', cursive; font-size: 25px;" data-toggle="collapse" data-target="#docList">Documents List</h4>
-    <div class="m-4 collapse" id="docList" style="width: fit-content;">
+    <div class="m-lg-4 m-2 collapse" id="docList" style="width: fit-content;">
         <% for(let i=0; i < caseDetails[active].docList.length; ++i){ %>
         <div class="m-2">
-            <p style="display: inline-block;" id="div<%= i %>" class="my-2 ml-3 mr-3"
+            <p style="display: inline-block;" id="div<%= i %>" class="my-2 mx-lg-3"
                 data-status="<%= caseDetails[active].docList[i].status %>"><img src="/images/arrow.png"
-                    class="mr-5"><%= caseDetails[active].docList[i].docName %><% if(caseDetails[active].docList[i].status === true){ %><img
-                    class="ml-2 mb-2" src="/images/check.png"><% } %></p>
-            <img id="remDoc<%= i %>" class="removeDoc" src="/images/minus.png" alt="Remove" style="display: none;">
+                    class="mr-lg-5 mr-2"><%= caseDetails[active].docList[i].docName %><% if(caseDetails[active].docList[i].status === true){ %><img
+                    class="check ml-2 mb-2" src="/images/check.png"><% } %></p>
+            <img id="remDoc<%= i %>" class="removeDoc" src="/images/minus.png" alt="Remove">
         </div>
         <% } %>
         <form onsubmit="return newDoc()" target="frame" action="/docOp" method="POST">
@@ -87,10 +96,10 @@
     </div>
 </div>
 <div>
-    <div class="dropdown mx-5 mb-5 mt-0 pl-5 caseList">
+    <div class="dropdown mx-lg-5 mb-lg-5 my-0 mx-3 pl-lg-5 pl-2 caseList">
         <h3 class="inline">Case List</h3>
         <img class="m-2 pb-2" src="/images/down.png" type="button" data-toggle="dropdown">
-        <div class="dropdown-menu show1">
+        <div class="mt-2 dropdown-menu show1">
             <% for(let i=0; i<caseDetails.length; ++i){ %>
             <h4 id="<%= i %>" class="dropdown-item"><%= caseDetails[i].caseTitle %></h4>
             <% } %>
@@ -125,18 +134,18 @@
     </div>
 </div>
 
-<h3 id="recordBalance" class="mx-5 px-5">Total balance = <b><%= caseDetails[active].balance %></b></h3>
+<h3 id="recordBalance" class="mx-lg-5 my-lg-0 px-lg-5 mt-3 mx-3 p-2">Total balance = <b><%= caseDetails[active].balance %></b></h3>
 
 <div class="row recDisplay">
-    <h2 class="col-6 a">Paid by you</h2>
-    <h2 class="col-6 b">Paid by client</h2>
+    <h2 class="col-lg-6 col-12 a">Paid by you</h2>
+    <h2 class="col-lg-6 col-12 b">Paid by client</h2>
 </div>
 
 <div class="advocateRec" style="display: none;">
     <div class="row mAuto thead">
-        <h3 class="col-3">Date</h3>
-        <h3 class="col-6">Purpose</h3>
-        <h3 class="col-3">Amount</h3>
+        <h3 class="col-lg-3 col-3">Date</h3>
+        <h3 class="col-lg-6 col-5">Purpose</h3>
+        <h3 class="col-lg-3 col-4">Amount</h3>
     </div>
     <% if(records.advocate.length === 0){ %>
     <h2 id="noRecordShow1">No records to show</h2>
@@ -145,9 +154,9 @@
     <% } %>
     <% for(let i=0; i<records.advocate.length; ++i){ %>
     <div class="row mAuto tbody">
-        <div class="col-3 titem"><%= records.advocate[i].actualDate %></div>
-        <div class="col-6 titem"><%= records.advocate[i].purpose %></div>
-        <div class="col-3 titem">
+        <div class="col-lg-3 titem"><%= records.advocate[i].actualDate %></div>
+        <div class="col-lg-6 titem"><%= records.advocate[i].purpose %></div>
+        <div class="col-lg-3 titem">
             <b><%= records.advocate[i].amount %></b>
             <img src="/images/trash.png" alt="Delete" class="delete">
         </div>

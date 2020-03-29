@@ -3,25 +3,36 @@ h1 {
     font-family: 'Baloo Thambi 2', cursive;
 }
 
-h3, .clientCard2 h3, .clientCard2 h4, .advocateCard2 > *, .c2, p{
+h3,
+.clientCard2 h3,
+.clientCard2 h4,
+.advocateCard2>*,
+.c2,
+p,
+.contactListItems,
+.dropdown-menu h4 {
     font-family: 'Sen', sans-serif;
 }
 
-h2, .advocateCard1 > *, .c1, .clientCard1 h3, .clientCard1 h4{
+h2,
+.advocateCard1>*,
+.c1,
+.clientCard1 h3,
+.clientCard1 h4 {
     font-family: 'Baloo Da 2', cursive;
 }
 
-h6{
+h6 {
     font-size: 20px;
     font-family: 'Comic Neue', cursive;
-    font-weight: 800;
 }
 
-#noRecordShow1, #noRecordShow2{
+#noRecordShow1,
+#noRecordShow2 {
     font-family: 'Special Elite', cursive;
 }
 
-button:hover{
+button:hover {
     cursor: pointer;
 }
 
@@ -29,31 +40,20 @@ button:hover{
     text-align: center;
 }
 
-.inline{
-    display: inline-block;
-}
-
-.dBlock{
+.dBlock {
     display: block;
 }
 
-.mAuto{
+.mAuto {
     margin: auto;
 }
 
 .logo {
-    height: 120px;
-    width: 120px;
-    margin-top: 15vh;
+    display: block;
+    height: 15vh;
+    width: 15vh;
+    margin-top: 5vh;
     margin-bottom: 20px;
-}
-
-.logo1 {
-    height: 700px;
-    width: 900px;
-    float: right;
-    position: fixed;
-    right: 0;
 }
 
 .error-img {
@@ -104,14 +104,17 @@ button:hover{
     box-shadow: 0 5px 5px -5px black;
 }
 
+/* 
 .signUp h4 {
     font-size: 15px;
-}
+} */
 
 .loginButton {
+    margin: auto;
     font-weight: bold;
     border: 2px solid grey;
     border-radius: 5px;
+    clear: both;
 }
 
 .signUpButton {
@@ -150,7 +153,7 @@ button:hover{
     clear: both;
 }
 
-.passToggle{
+.passToggle {
     box-sizing: border-box;
     border-bottom: 1px solid black;
     padding-bottom: 20px;
@@ -163,18 +166,31 @@ button:hover{
     background-color: #f1f3f4;
     text-align: left;
     box-shadow: 10px 10px 15px -15px black;
-    width: 500px;
+    float: right;
     max-width: 90vw;
     height: fit-content;
     max-height: 300px;
     margin-right: 10px;
 }
 
-#docList, .contactDetails h3, .advocateCard1 > *, .advocateCard2 > *{
-    font-size: 20px;
+.pin {
+    display: none;
 }
 
-.c1, .c2{
+.advocateCard1 {
+    width: 35%;
+}
+
+.advocateCard2 {
+    width: 60%;
+}
+
+#docList,
+.contactDetails h3,
+.advocateCard1>*,
+.advocateCard2>*,
+.c1,
+.c2 {
     font-size: 18px;
 }
 
@@ -198,8 +214,10 @@ button:hover{
 
 .clientName,
 .contactListItems {
+    font-size: 22px;
     cursor: auto;
-    width: 30%;
+    width: 70vh;
+    max-width: 85vw;
 }
 
 .clientName {
@@ -210,7 +228,6 @@ button:hover{
 .contactListItems {
     border: 1px solid black;
     border-top: none;
-    font-size: 25px;
     padding: 10px;
     outline: none;
 }
@@ -220,36 +237,56 @@ button:hover{
     border-bottom-width: 2px;
 }
 
-.searchCont h4 {
-    margin: 20px auto 0;
+/* .searchCont h4{
     font-size: 20px;
-}
+    margin: 20px auto 0;
+} */
 
 .clientCreate input {
-    width: 50%;
+    width: 70%;
+}
+
+.clientCard1 {
+    width: 20%;
+}
+
+.clientCard2 {
+    width: 60%;
 }
 
 .clientCreate input[name="age"] {
     text-align: center;
-    width: 15%;
+    width: 20%;
 }
 
-img[data-toggle="dropdown"]:hover, #docList div img, .close:hover, .delete{
+img[data-toggle="dropdown"]:hover,
+#docList div img,
+.close:hover,
+.delete {
     cursor: pointer;
 }
 
-#docList p, .dropdown-menu.show, .a:hover, .b:hover, .titem{
+#docList p,
+.dropdown-menu.show,
+.a:hover,
+.b:hover,
+.titem {
     cursor: default;
 }
 
-.dropdown-menu.show{
+.dropdown-menu.show {
     transform: translate3d(0px, 30px, 1001px) !important;
 }
 
-.dropdown-item:active{
+.dropdown-item:active {
     background-color: #dee3e2;
     color: black;
     outline: none;
+}
+
+.removeDoc,
+.delete {
+    display: none;
 }
 
 .c {
@@ -270,7 +307,7 @@ img[data-toggle="dropdown"]:hover, #docList div img, .close:hover, .delete{
     box-shadow: 10px 10px 100px -10px black;
 }
 
-.close{
+.close {
     float: right;
 }
 
@@ -282,57 +319,60 @@ img[data-toggle="dropdown"]:hover, #docList div img, .close:hover, .delete{
     max-height: 400px;
 }
 
-.newCase input, .newCase textarea{
+.newCase input,
+.newCase textarea {
     display: block;
     margin: 20px;
     padding: 20px;
     width: 400px;
 }
 
-.recDisplay{
+.recDisplay {
     text-align: center;
     margin: 50px 100px;
 }
 
-.a, .b{
+.a,
+.b {
     border: 2px solid black;
     border-radius: 10px;
     padding: 25px;
 }
 
-.a:hover, .b:hover{
+.a:hover,
+.b:hover {
     background-color: #f1f3f4;
 }
 
-.a{
+.a {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-.b{
+.b {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     border-left: none;
 }
 
-.delete{
-    display: none;
+.delete {
     float: right;
 }
 
-.thead, .tbody{
+.thead,
+.tbody {
     text-align: center;
     width: 80%;
     max-width: 80%;
 }
 
-.thead{
+.thead {
     margin-top: 5%;
     margin-bottom: 2%;
 }
 
-.thead h3{
-    box-shadow: 0px 5px 5px #eeeeee, 
+.thead h3 {
+    box-shadow: 0px 5px 5px #eeeeee,
         -5px 5px 5px #eeeeee, 5px 5px 5px #eeeeee;
     font-size: 35px;
     font-weight: bold;
@@ -341,54 +381,222 @@ img[data-toggle="dropdown"]:hover, #docList div img, .close:hover, .delete{
     padding-bottom: 10px;
 }
 
-.titem{
+.titem {
     border-left: 1px solid black;
     border-top: 1px solid black;
     font-size: 25px;
     padding: 25px;
 }
 
-.titem:nth-child(2){
+.titem:nth-child(2) {
     font-size: 20px;
     text-align: left;
     padding: 25px 50px;
 }
 
-.titem:last-child{
+.titem:last-child {
     border-right: 1px solid black;
 }
 
-.tbody:last-of-type .titem{
+.tbody:last-of-type .titem {
     border-bottom: 1px solid black;
 }
 
-.advocateRec, .clientRec{
+.advocateRec,
+.clientRec {
     margin: 20px 0;
     text-align: center;
     width: 100%;
 }
 
-.newRec{
+.newRec {
     text-align: left;
     margin: 0 0 5%;
     padding: 25px;
     width: fit-content;
 }
 
-.newRec *{
+.newRec * {
     display: block;
     margin: 35px 100px;
     padding: 15px;
 }
 
-.newRec h2{
+.newRec h2 {
     margin: 50px;
 }
 
-.newRec button{
+.newRec button {
     padding: 5px 10px;
+}
+
+@media (max-width: 768px) {
+    body {
+        max-width: 100vw;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    h3 {
+        font-size: 22px;
+    }
+    h6,
+    .box,
+    .deleteAlert>*,
+    .advocateCard1>*,
+    .advocateCard2>*,
+    #docList,
+    .c1,
+    .c2,
+    .contactListItems{
+        font-size: 15px;
+    }
+    .signIn-box {
+        width: 100vh;
+        max-width: 90vw;
+    }
+    .signIn-text {
+        width: 75%;
+    }
+    .signUp-box {
+        margin-left: 50px;
+        max-width: 100vw;
+    }
+    .cLogo {
+        display: none;
+    }
+    .signUp-text {
+        padding: 10px;
+        width: 70%;
+    }
+    .address {
+        width: 85%;
+    }
+    .ph91 input:nth-child(1) {
+        width: 50px;
+    }
+    .passToggle {
+        margin-top: 27px;
+        margin-bottom: 0;
+        height: 41px;
+        width: 60px;
+    }
+    .advocateCard {
+        background-image: linear-gradient(45deg, black 90%, #f1f3f4 10%);
+        box-shadow: none;
+        margin: 0;
+        padding: 15px 25px 0;
+        width: 100vw;
+        max-width: 100vw;
+        color: white;
+    }
+    .pin {
+        height: 20px;
+        width: 20px;
+        display: inline-block;
+        margin: 5px;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .contactDetails {
+        display: none;
+    }
+    .removeDoc,
+    .delete {
+        display: inline;
+    }
+    .close {
+        height: 15px;
+        width: 15px;
+    }
+    .c div {
+        box-sizing: border-box;
+        padding: 25px;
+        width: 80vw;
+    }
+    .caseDesc {
+        font-size: 16px;
+        padding: 0;
+        width: fit-content;
+        max-height: fit-content;
+    }
+    .recDisplay {
+        margin: 10px;
+    }
+    .a,
+    .b {
+        font-size: 35px;
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+    #noRecordShow1,
+    #noRecordShow2 {
+        font-size: 25px;
+    }
+    p,
+    .clientCard2>*,
+    .clientCard1>*,
+    .dropdown-menu h4,
+    .titem {
+        font-size: 18px;
+    }
+    .clientCard1 {
+        width: 38%;
+    }
+    .clientCard2 {
+        width: 50%;
+    }
+    .check {
+        height: 20px;
+        width: 20px;
+    }
+    .advocateRec,
+    .clientRec {
+        position: relative;
+        max-width: 100vw;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+    .thead {
+        margin-bottom: 25px;
+    }
+    .thead h3 {
+        font-size: 20px;
+    }
+    .titem {
+        float: left;
+        padding: 20px;
+        width: 150px;
+    }
+    .tbody .titem:nth-of-type(2) {
+        font-size: 17px;
+        padding: 20px 15px;
+        width: 250px;
+    }
+    .tbody {
+        min-width: max-content;
+        max-width: none;
+    }
+    .newRec {
+        margin: 0;
+    }
+    .newRec * {
+        margin: 25px;
+    }
+    .newRec .close {
+        padding: 0;
+    }
+    .newRec h2 {
+        margin: 0;
+        padding-left: 0;
+    }
 }
 
 .m25 {
     margin-left: 25px;
+}
+
+.inline {
+    display: inline-block;
 }

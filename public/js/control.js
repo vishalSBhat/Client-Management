@@ -275,10 +275,12 @@ function newRecSubmit() {
 }
 
 $(".advocateRec, .clientRec").on("mouseenter", ".tbody", (e) => {
+    if (!(window.matchMedia('(max-width: 768px)').matches))
     $($(e.target).parent()).find(".delete").show();
 });
 
 $(".advocateRec, .clientRec").on("mouseleave", ".tbody", (e) => {
+    if (!(window.matchMedia('(max-width: 768px)').matches))
     $($(e.target).parent()).find(".delete").hide();
 });
 
@@ -320,7 +322,7 @@ $(".deleteAlert div button").on("click", (ev) => {
 function justSet(){
     let id1 = "remDoc"+($("#docList div").length+1);
     let id2 = "div"+($("#docList div").length+1);
-    let newDoc = '<div class="m-2"><p style="display: inline-block" id='+id2+' class="my-2 ml-3 mr-3" data-status="2"><img src="/images/arrow.png" class="mr-5">'+$('#docList form input:nth-of-type(3)').val()+'</p><img id='+id1+' class="removeDoc" src="/images/minus.png" alt="Remove" style="display: none;"></div>'
+    let newDoc = '<div class="m-2"><p style="display: inline-block" id='+id2+' class="my-2 mx-lg-3" data-status="2"><img src="/images/arrow.png" class="mr-lg-5 mr-2">'+$('#docList form input:nth-of-type(3)').val()+'</p><img id='+id1+' class="removeDoc" src="/images/minus.png" alt="Remove" style="display: none;"></div>'
     $("#docList form").before(newDoc);
     $("#docList form input:nth-of-type(2)").val("2");
 }
@@ -341,7 +343,7 @@ $("#docList").on("click", "div p", (e) => {
         $("#docList form").submit();
     } else {
         $("#docList form input:nth-of-type(2)").val("1");
-        $(target).append('<img class="ml-2 mb-2" src="/images/check.png">');
+        $(target).append('<img class="check ml-2 mb-2" src="/images/check.png">');
         $(target).attr("data-status", "true");
         $("#docList form").submit();
     }
@@ -350,12 +352,14 @@ $("#docList").on("click", "div p", (e) => {
 
 $("#docList").on("mouseenter", "div p", (e) => {
     let temp = e.target.id.slice(-1);
+    if (!(window.matchMedia('(max-width: 768px)').matches))
     $("#remDoc"+temp).css("display", "inline");
 });
 
 $("#docList").on("mouseleave", "div", (e) => {
     if(e.target.nodeName === "DIV"){
         let temp = $(e.target).children("p").attr("id").slice(-1);
+        if (!(window.matchMedia('(max-width: 768px)').matches))
         $("#remDoc"+temp).css("display", "none");
     }
 });

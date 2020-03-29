@@ -1,13 +1,13 @@
 <%- include("navbar") -%>
 
-<h1 class="m-lg-5 m-md-4 m-sm-3">Client Details</h1>
+<h1 class="m-lg-5 my-4 mx-3">Client Details</h1>
 <form target="dummy2" onsubmit="return signButton()" action="/clientSignUp" method="POST">
-  <div class="inline signUp-box my-3 mr-3 p-4 clientCreate">
+  <div class="inline signUp-box my-3 mr-3 p-2 clientCreate">
     <input type="text" class="box signUp-text" name="fName" autocomplete="no" placeholder="First name" />
     <input type="text" class="box signUp-text" name="lName" autocomplete="no" placeholder="Last name" />
     <input type="text" class="box signUp-text" name="FName" autocomplete="no" placeholder="Father's name" />
     <input type="text" class="box signUp-text" name="age" autocomplete="no" placeholder="Age" maxlength="2" />
-    <textarea name="address" class="box address signUp-text"  autocomplete="no" cols="40" rows="3" placeholder="Address..."></textarea>
+    <textarea name="address" class="box address signUp-text"  autocomplete="no" rows="3" placeholder="Address..."></textarea>
     <input type="email" class="box signUp-text" name="email" autocomplete="no" placeholder="mail-Id" />
     <div class="wrap ph91">
       <input type="text" class="box signUp-text mr-0" value="+91" readonly />
@@ -15,15 +15,14 @@
         minlength="10" />
     </div>
   </div>
-  <img src="/images/logo1.jpg" class="logo1" alt="Advocate">
-  <h1 class="m-lg-5 m-md-4 m-sm-3">Case Deatils</h1>
-  <div class="inline signUp-box my-3 mr-3 p-4 clientCreate">
+  <h1 class="m-lg-5 my-4 mx-3">Case Deatils</h1>
+  <div class="inline signUp-box my-3 mr-3 p-2 clientCreate">
     <input type="text" class="box signUp-text" name="caseTitle" placeholder="Case Title">
-    <textarea name="caseDesc" class="box address signUp-text" cols="50" rows="5"
+    <textarea name="caseDesc" class="box address signUp-text" cols="40" rows="5"
       placeholder="Case Description"></textarea>
   </div>
   <p class=" m-lg-5 m-md-4 m-sm-3" style="display: none; color: red;"></p>
-  <button type="submit" class="btn btn-lg btn-outline-dark m-lg-5 m-md-4 m-sm-3 signUpButton dBlock signButton">Create</button>
+  <button type="submit" class="btn btn-lg btn-outline-dark m-lg-5 my-4 mx-3 signUpButton dBlock signButton">Create</button>
   <input type="hidden" name="advocateId" value="<%= id %> "/>
 </form>
 

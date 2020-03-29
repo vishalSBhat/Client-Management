@@ -1,12 +1,12 @@
 <%- include("navbar") -%>
 
-<h1 class="m-lg-5 m-md-4 m-sm-3">Sign Up</h1>
+<h1 class="m-lg-5 my-4 mx-3">Sign Up</h1>
 <form target="dummy1" onsubmit="return signButton()" action="/signUp" method="POST">
   <div class="signUp-box my-3 mr-3 p-2">
     <input type="text" class="box signUp-text" name="fName" placeholder="First name" />
     <input type="text" class="box signUp-text" name="lName" placeholder="Last name" />
     <input type="text" class="box signUp-text" name="qualification" placeholder="Qualification">
-    <textarea name="address" class="box address signUp-text" cols="40" rows="3" placeholder="Address"></textarea>
+    <textarea name="address" class="box address signUp-text" cols="35" rows="3" placeholder="Address"></textarea>
     <input type="email" class="box signUp-text" name="email" placeholder="Mail-Id" />
     <p class='mb-3 mt-0 mx-5 pt-0 pb-0' style='display: none; color: red;'>e-Mail already in use !!</p>
     <div class="mAuto wrap ph91">
@@ -20,7 +20,7 @@
     <input type="password" class="box signUp-text" id="passC" name="passC" placeholder="Confirm your password" />
   </div>
   <img src="/images/logo1.jpg" class="logo1" alt="Advocate">
-  <button type="submit" class="btn btn-lg btn-outline-dark m-lg-5 m-md-4 m-sm-3 signUpButton dBlock signButton">Sign Up</button>
+  <button type="submit" class="btn btn-lg btn-outline-dark m-lg-5 my-4 mx-3 signUpButton dBlock signButton">Sign Up</button>
 </form>
 
 <iframe style="display: none;" onload="verify1()" class="dummy1" name="dummy1"></iframe>

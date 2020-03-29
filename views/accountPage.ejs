@@ -20,14 +20,15 @@
 
 <body onload="accountPage()">
 
-<div style="text-align: right;">
-    <div class="mr-4 mt-4 py-3 pl-4 pr-0 row inline advocateCard">
-        <div class="mb-2 col-4 advocateCard1" style="float: left;">
+<div class="pb-5 dBlock" style="overflow: hidden;">
+    <div class="mr-lg-4 mt-lg-4 py-lg-3 pl-lg-4 pr-0 inline advocateCard">
+        <img class="pin" src="/images/pin.png">
+        <div class="mb-2 advocateCard1" style="float: left;">
             <h3>Name : </h3>
             <h3>Qualification : </h3>
             <h3>Address : </h3>
         </div>
-        <div class="ml-2 mb-2 col-6 advocateCard2" style="float: left;">
+        <div class="ml-2 mb-2 advocateCard2" style="float: left;">
             <h3><%= lawyerDetails.name %></h3>
             <h3><%= lawyerDetails.qualification %></h3>
             <h3><%= lawyerDetails.address %></h3>
@@ -45,7 +46,7 @@
         </div>
     </div>
 </div>
-<img src="/images/advocate.png" class="mt-3 dBlock mAuto logo" alt="Advocate">
+<img src="/images/advocate.png" class="dBlock mAuto logo" alt="Advocate">
 <form action="/accountPage" method="POST">
     <div class="container-fluid centre searchCont">
         <input type="text" name="name" class="pl-3 pb-1 box mAuto clientName" placeholder="Search for your client..."
