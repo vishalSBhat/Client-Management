@@ -29,7 +29,6 @@ router.post('/', (req, res) => {
 
   res.cookie('client', clientId, {
     signed: true,
-    httpOnly: true,
     sameSite: true
   });
   res.status(200).send('/client/');

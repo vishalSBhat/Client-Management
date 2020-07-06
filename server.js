@@ -43,7 +43,6 @@ app.post("/", (req, res) => {
             bcrypt.hash(foundData._id.toString(), saltRounds).then(id => {
                 res.cookie('you', id, {
                     signed: true,
-                    httpOnly: true,
                     maxAge: 3 * 30 * 24 * 60 * 60 * 1000,
                     sameSite: true
                 });
