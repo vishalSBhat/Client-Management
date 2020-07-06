@@ -10,7 +10,7 @@ require('dotenv').config();
 const app = express(),
     port = process.env.PORT || 3000;
 
-mongoose.connect("mongodb+srv://admin-V:q1w2e3r4@v-lytod.mongodb.net/advocateDB", {
+mongoose.connect(process.env.MONGO_URI, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useFindAndModify: false
