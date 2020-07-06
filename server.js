@@ -10,7 +10,7 @@ require('dotenv').config();
 const app = express(),
     port = process.env.PORT || 3000;
 
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(String(process.env.MONGO_URI), {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useFindAndModify: false
