@@ -186,11 +186,6 @@ function validateAddress() {
 
 //qualification operations
 
-$("#advocate-sign-up-qualification").on({
-    'click': $('#advocate-sign-up-qualification').removeAttr('readonly'),
-    'keydown': e => e.preventDefault()
-});
-
 function updateQualification(checked, value) {
     let qualification = $('#advocate-sign-up-qualification'),
         list = qualification.val();
