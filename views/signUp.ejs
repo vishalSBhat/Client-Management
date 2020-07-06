@@ -1,27 +1,269 @@
-<%- include("navbar") -%>
+<%- include("emptyNavbar") -%>
 
-<h1 class="m-lg-5 my-4 mx-3">Sign Up</h1>
-<form target="dummy1" onsubmit="return signButton()" action="/signUp" method="POST">
-  <div class="signUp-box my-3 mr-3 p-2">
-    <input type="text" class="box signUp-text" name="fName" placeholder="First name" />
-    <input type="text" class="box signUp-text" name="lName" placeholder="Last name" />
-    <input type="text" class="box signUp-text" name="qualification" placeholder="Qualification">
-    <textarea name="address" class="box address signUp-text" cols="35" rows="3" placeholder="Address"></textarea>
-    <input type="email" class="box signUp-text" name="email" placeholder="Mail-Id" />
-    <p class='mb-3 mt-0 mx-5 pt-0 pb-0' style='display: none; color: red;'>e-Mail already in use !!</p>
-    <div class="mAuto wrap ph91">
-      <input type="text" class="box signUp-text mr-0" value="+91" readonly />
-      <input type="text" class="box signUp-text ml-0" name="phNo" placeholder="Phone Number" maxlength="10" minlength="10" />
-    </div>
-    <div class="wrap">
-      <input type="password" class="box signUp-text mr-0" id="pass" name="pass" placeholder="Enter your password" />
-      <input type="image" onclick="return false;" src="/images/visible.jpg" alt="" class="signUp-text passToggle mx-0" value="NULL">
-    </div>
-    <input type="password" class="box signUp-text" id="passC" name="passC" placeholder="Confirm your password" />
-  </div>
-  <button type="submit" class="btn btn-lg btn-outline-dark m-lg-5 my-4 mx-3 signUpButton dBlock signButton">Sign Up</button>
-</form>
+<div class="container">
+  <h1 class="my-4">Welcome to <strong>Client Manager</strong></h1>
+  <h4 class="mb-3">Fill below details to create a new account.</h4>
 
-<iframe style="display: none;" onload="verify1()" class="dummy1" name="dummy1"></iframe>
-<form class="dummy1Form" action="/dummy-one" method="POST" style="display: none;"></form>
+  <form class="container" id="advocate-sign-up" action="/sign-up" method="POST">
+    <div class="row">
+      <div class="mx-2 my-2 p-0 col-10 col-sm-4 text-field-container">
+        <input
+          type="text"
+          id="advocate-sign-up-fname"
+          class="col-12 py-2 px-3 text-field"
+          name="fname"
+          required
+        />
+        <span class="text-field-placeholder">First Name</span>
+        <img
+          src="/images/error.jpg"
+          class="error-img"
+          alt="Error"
+        />
+        <span class="mt-1 mb-0 error-message">
+          This field is required
+        </span>
+      </div>
+      <div class="mx-2 my-2 p-0 col-10 col-sm-4 text-field-container">
+        <input
+          type="text"
+          id="advocate-sign-up-lname"
+          class="col-12 py-2 px-3 text-field"
+          name="lname"
+          required
+        />
+        <span class="text-field-placeholder">Last Name</span>
+        <img
+          src="/images/error.jpg"
+          class="error-img"
+          alt="Error"
+        />
+        <span class="mt-1 mb-0 error-message">
+          This field is required
+        </span>
+      </div>
+    </div>
+    <p class="mb-2">Address :</p>
+    <div
+      class="row pt-4 px-0 mb-4 mr-auto text-field-container address-field-container"
+    >
+      <input
+        type="text"
+        class="mx-2 my-2 p-2 col-4 col-sm-2"
+        name="doorNo"
+        placeholder="Door/Apt.No."
+      />
+      <input
+        type="text"
+        class="mx-2 my-2 p-2 col-6 col-sm-3"
+        name="homeName"
+        placeholder="Bldg/Home Name"
+      />
+      <input
+        type="text"
+        class="mx-2 my-2 p-2 col-7 col-sm-4"
+        name="streetName"
+        placeholder="Street/Road Name"
+      />
+      <input
+        type="text"
+        class="mx-2 my-2 p-2 col-6 col-sm-3"
+        name="areaName"
+        placeholder="Area Name"
+      />
+      <input
+        type="text"
+        class="mx-2 my-2 p-2 col-4 col-sm-3"
+        name="village"
+        placeholder="Village"
+      />
+      <input
+        type="text"
+        class="mx-2 my-2 p-2 col-6 col-sm-2"
+        name="post"
+        placeholder="Post"
+      />
+      <div class="d-none d-sm-block col-sm-3"></div>
+      <input
+        type="text"
+        class="mx-2 my-2 p-2 col-4 col-sm-1 number-text-field"
+        name="pinCode"
+        placeholder="Pin-Code"
+        maxlength="6"
+      />
+      <input
+        type="text"
+        class="mx-2 my-2 p-2 col-5 col-sm-3"
+        name="taluk"
+        placeholder="Taluk"
+      />
+      <input
+        type="text"
+        class="mx-2 my-2 p-2 col-5 col-sm-3"
+        name="district"
+        placeholder="District"
+      />
+      <div class="d-none d-sm-block col-sm-3"></div>
+      <input
+        type="text"
+        class="mx-2 my-2 p-2 col-7 col-sm-3"
+        name="state"
+        placeholder="State"
+      />
+      <span class="col-12 mb-2 mx-1 mt-0 error-message">
+        Address cannot be blank
+      </span>
+    </div>
+    <div class="row">
+      <div class="ml-2 my-2 p-0 col-7 col-sm-3 text-field-container">
+        <input
+          type="text"
+          id="advocate-sign-up-qualification"
+          class="col-12 py-2 px-3"
+          name="qualification"
+          placeholder="Qualification"
+          readonly
+          autocomplete="off"
+        />
+        <img
+          src="/images/error.jpg"
+          class="error-img"
+          alt="Error"
+        />
+        <span class="mt-1 mb-0 error-message">
+          This field is required
+        </span>
+      </div>
+      <div class="mr-2 my-2 p-0 col-3 col-sm-1 text-field-container">
+        <button id="qualification-selector-button" class="col-12 py-2 px-0" type="button" data-toggle="collapse" data-target="#qualification-selector" aria-controls="qualification-selector">
+          Add <img class="ml-1" src="/icons/icons/plus-circle-fill.svg"></img>
+        </button>
+        <div class="col-12 p-0 collapse qualification-selector-menu" id="qualification-selector">
+          <h4 class="mt-2 qualification-selector-item">B.A.</h4>
+          <h4 class="qualification-selector-item">B.Sc.</h4>
+          <h4 class="qualification-selector-item">B.Com.</h4>
+          <h4 class="qualification-selector-item">M.A.</h4>
+          <h4 class="qualification-selector-item">M.Com.</h4>
+          <h4 class="qualification-selector-item">M.Sc.</h4>
+          <h4 class="qualification-selector-item">LL.B.</h4>
+          <h4 class="qualification-selector-item">LL.M.</h4>
+          <h4 class="qualification-selector-item">M.B.L.</h4>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="mx-2 my-2 p-0 col-10 col-sm-4 text-field-container">
+        <input
+          type="text"
+          id="advocate-sign-up-mail"
+          class="col-12 py-2 px-3 text-field"
+          name="mail"
+          required
+        />
+        <span class="text-field-placeholder">e-Mail</span>
+        <img
+          src="/images/error.jpg"
+          class="error-img"
+          alt="Error"
+        />
+        <span class="mt-1 mb-0 error-message">
+          This field is required
+        </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="mx-2 my-2 p-0 col-10 col-sm-4 text-field-container">
+        <input
+          type="tel"
+          id="advocate-sign-up-phNo"
+          class="col-12 py-2 px-3 text-field number-text-field"
+          name="phNo"
+          maxlength="10"
+          required
+        />
+        <span class="text-field-placeholder">ph-No</span>
+        <img
+          src="/images/error.jpg"
+          class="error-img"
+          alt="Error"
+        />
+        <span class="mt-1 mb-0 error-message">
+          This field is required
+        </span>
+      </div>
+    </div>
+    <div class="row">
+      <div
+        class="mx-2 my-2 p-0 col-11 col-sm-4 text-field-container password-field-container"
+      >
+        <input
+          type="password"
+          id="advocate-sign-up-password"
+          class="col-10 py-2 px-3 text-field"
+          name="password"
+          required
+        />
+        <span class="text-field-placeholder">Password</span>
+        <img
+          src="/images/error.jpg"
+          class="error-img"
+          alt="Error"
+        />
+        <span class="mt-1 mb-0 error-message">
+          This field is required
+        </span>
+        <img
+          src="./icons/icons/eye-fill.svg"
+          alt="Show"
+          class="password-toggler"
+          title="Show Password"
+          data-for="#advocate-sign-up-password"
+        />
+      </div>
+      <div
+        class="mx-2 my-2 p-0 col-11 col-sm-4 text-field-container password-field-container"
+      >
+        <input
+          type="password"
+          id="advocate-sign-up-confirmPassword"
+          class="col-10 py-2 px-3 text-field"
+          name="confirmPassword"
+          required
+        />
+        <span class="text-field-placeholder">Confirm Password</span>
+        <img
+          src="/images/error.jpg"
+          class="error-img"
+          alt="Error"
+        />
+        <span class="mt-1 mb-0 error-message">
+          Passwords doest not match
+        </span>
+        <img
+          src="./icons/icons/eye-fill.svg"
+          alt="Show"
+          class="password-toggler"
+          title="Show Password"
+          data-for="#advocate-sign-up-confirmPassword"
+        />
+      </div>
+    </div>
+  </form>
+  <p class="ml-2 mb-0" id="advocate-server-validation-error" style="visibility: hidden">Error</p>
+  <button
+  id="sign-up-load-button"
+    type="submit" form="advocate-sign-up"
+    class="button my-2 mx-2 px-3 py-2"
+  >
+    Sign Up
+  </button>
+  <img
+    style="visibility: hidden;"
+    height="20px"
+    width="20px"
+    src="/loading-svg/loading-mini.svg"
+    alt="Loading..."
+  />
+</div>
+
 <%- include("footer") -%>

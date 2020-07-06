@@ -1,34 +1,243 @@
 <%- include("navbar") -%>
 
-<h1 class="m-lg-5 my-4 mx-3">Client Details</h1>
-<form target="dummy2" onsubmit="return signButton()" action="/clientSignUp" method="POST">
-  <div class="inline signUp-box my-3 mr-3 p-2 clientCreate">
-    <input type="text" class="box signUp-text" name="fName" autocomplete="no" placeholder="First name" />
-    <input type="text" class="box signUp-text" name="lName" autocomplete="no" placeholder="Last name" />
-    <input type="text" class="box signUp-text" name="FName" autocomplete="no" placeholder="Father's name" />
-    <input type="text" class="box signUp-text" name="age" autocomplete="no" placeholder="Age" maxlength="2" />
-    <textarea name="address" class="box address signUp-text"  autocomplete="no" rows="3" placeholder="Address..."></textarea>
-    <input type="email" class="box signUp-text" name="email" autocomplete="no" placeholder="mail-Id" />
-    <div class="wrap ph91">
-      <input type="text" class="box signUp-text mr-0" value="+91" readonly />
-      <input type="text" class="box signUp-text ml-0" name="phNo" autocomplete="no" placeholder="Phone Number" maxlength="10"
-        minlength="10" />
-    </div>
-  </div>
-  <h1 class="m-lg-5 my-4 mx-3">Case Deatils</h1>
-  <div class="inline signUp-box my-3 mr-3 p-2 clientCreate">
-    <input type="text" class="box signUp-text" name="caseTitle" placeholder="Case Title">
-    <textarea name="caseDesc" class="box address signUp-text" cols="40" rows="5"
-      placeholder="Case Description"></textarea>
-  </div>
-  <p class=" m-lg-5 m-md-4 m-sm-3" style="display: none; color: red;"></p>
-  <button type="submit" class="btn btn-lg btn-outline-dark m-lg-5 my-4 mx-3 signUpButton dBlock signButton">Create</button>
-  <input type="hidden" name="advocateId" value="<%= id %> "/>
-</form>
+<div style="position: relative;" class="container">
+  <%- include("profile") -%>
+  <h1 class="my-4 hide-behind-profile">
+    Welcome to <strong>Client Manager</strong>
+  </h1>
+  <h5 class="mb-3 hide-behind-profile">
+    Fill below details to create a new client record.
+  </h5>
 
-<iframe name="dummy2" class="dummy2" onload="verify2()" style="display: none;"></iframe>
-<form action="/dummy-two" method="POST" class="dummy2Form" style="display: none;">
-  <input type="hidden" name="advocateId" value="<%= id %> "/>
-</form>
+  <form
+    class="container hide-behind-profile"
+    id="client-sign-up"
+    action="/client/sign-up/"
+    method="POST"
+  >
+    <div class="row">
+      <div class="mx-2 my-2 p-0 col-10 col-sm-4 text-field-container">
+        <input
+          type="text"
+          id="client-sign-up-fname"
+          class="col-12 py-2 px-3 text-field"
+          name="fname"
+          required
+        />
+        <span class="text-field-placeholder">First Name</span>
+        <img src="/images/error.jpg" class="error-img" alt="Error" />
+        <span class="mt-1 mb-0 error-message">
+          This field is required
+        </span>
+      </div>
+      <div class="mx-2 my-2 p-0 col-10 col-sm-4 text-field-container">
+        <input
+          type="text"
+          id="client-sign-up-lname"
+          class="col-12 py-2 px-3 text-field"
+          name="lname"
+          required
+        />
+        <span class="text-field-placeholder">Last Name</span>
+        <img src="/images/error.jpg" class="error-img" alt="Error" />
+        <span class="mt-1 mb-0 error-message">
+          This field is required
+        </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="mx-2 my-2 p-0 col-10 col-sm-4 text-field-container">
+        <input
+          type="text"
+          id="client-sign-up-fatherName"
+          class="col-12 py-2 px-3 text-field"
+          name="fatherName"
+          required
+        />
+        <span class="text-field-placeholder">Father Name</span>
+        <img src="/images/error.jpg" class="error-img" alt="Error" />
+        <span class="mt-1 mb-0 error-message">
+          This field is required
+        </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="mx-2 my-2 p-0 col-6 col-sm-3 text-field-container">
+        <input
+          type="text"
+          id="client-sign-up-dob"
+          class="col-12 py-2 px-3 text-field"
+          name="dob"
+          placeholder="D.O.B."
+          onclick="$(this).attr('type', 'date')"
+          onblur="$(this).attr('type', 'text')"
+          required
+        />
+        <span class="mt-1 mb-0 error-message">
+          This field is required
+        </span>
+      </div>
+      <div class="mx-2 my-2 p-0 col-3 col-sm-1 text-field-container">
+        <input
+          type="text"
+          id="client-sign-up-age"
+          class="col-12 py-2 px-3 text-field number-text-field"
+          name="age"
+          required
+        />
+        <span class="text-field-placeholder">Age</span>
+        <img src="/images/error.jpg" class="error-img" alt="Error" />
+        <span class="mt-1 mb-0 error-message">
+          Required
+        </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="mx-2 my-2 p-0 col-10 col-sm-4 text-field-container">
+        <input
+          type="text"
+          id="client-sign-up-husbandName"
+          class="col-12 py-2 px-3 optional-text-field"
+          name="husbandName"
+          required
+        />
+        <span class="text-field-placeholder">Husband Name</span>
+      </div>
+    </div>
+    <p class="mt-4 mb-2">Address :</p>
+    <div
+      class="row pt-4 px-0 mb-4 mr-auto text-field-container address-field-container"
+    >
+      <input
+        type="text"
+        class="mx-2 my-2 p-2 col-4 col-sm-2"
+        name="doorNo"
+        placeholder="Door/Apt.No."
+      />
+      <input
+        type="text"
+        class="mx-2 my-2 p-2 col-6 col-sm-3"
+        name="homeName"
+        placeholder="Bldg/Home Name"
+      />
+      <input
+        type="text"
+        class="mx-2 my-2 p-2 col-7 col-sm-4"
+        name="streetName"
+        placeholder="Street/Road Name"
+      />
+      <input
+        type="text"
+        class="mx-2 my-2 p-2 col-6 col-sm-3"
+        name="areaName"
+        placeholder="Area Name"
+      />
+      <input
+        type="text"
+        class="mx-2 my-2 p-2 col-4 col-sm-3"
+        name="village"
+        placeholder="Village"
+      />
+      <input
+        type="text"
+        class="mx-2 my-2 p-2 col-6 col-sm-2"
+        name="post"
+        placeholder="Post"
+      />
+      <div class="d-none d-sm-block col-sm-3"></div>
+      <input
+        type="text"
+        class="mx-2 my-2 p-2 col-4 col-sm-1 number-text-field"
+        name="pinCode"
+        placeholder="Pin-Code"
+      />
+      <input
+        type="text"
+        class="mx-2 my-2 p-2 col-5 col-sm-3"
+        name="taluk"
+        placeholder="Taluk"
+      />
+      <input
+        type="text"
+        class="mx-2 my-2 p-2 col-5 col-sm-3"
+        name="district"
+        placeholder="District"
+      />
+      <div class="d-none d-sm-block col-sm-3"></div>
+      <input
+        type="text"
+        class="mx-2 my-2 p-2 col-7 col-sm-3"
+        name="state"
+        placeholder="State"
+      />
+      <span class="col-12 mb-2 mx-1 mt-0 error-message">
+        Address cannot be blank
+      </span>
+    </div>
+    <div class="row">
+      <div class="mx-2 my-2 p-0 col-10 col-sm-4 text-field-container">
+        <input
+          type="tel"
+          id="client-sign-up-phNo"
+          class="col-12 py-2 px-3 text-field number-text-field"
+          name="phNo"
+          maxlength="10"
+          required
+        />
+        <span class="text-field-placeholder">ph-No</span>
+        <img src="/images/error.jpg" class="error-img" alt="Error" />
+        <span class="mt-1 mb-0 error-message">
+          This field is required
+        </span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="mx-2 mt-2 mb-4 p-0 col-10 col-sm-4 text-field-container">
+        <input
+          type="text"
+          id="client-sign-up-telNo"
+          class="col-12 py-2 px-3 number-text-field"
+          name="telNo"
+          required
+        />
+        <span class="text-field-placeholder">Tel. (Optional)</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="mx-2 my-3 p-0 col-10 col-sm-4 text-field-container">
+        <input
+          type="text"
+          id="client-sign-up-mail"
+          class="col-12 py-2 px-3"
+          name="mail"
+          required
+        />
+        <span class="text-field-placeholder">e-Mail</span>
+      </div>
+    </div>
+  </form>
+  <p
+    class="ml-3 mb-2 hide-behind-profile"
+    id="advocate-server-validation-error"
+    style="visibility: hidden;"
+  >
+    Error
+  </p>
+  <button
+    id="client-sign-up-load-button"
+    type="submit"
+    form="client-sign-up"
+    class="button my-2 mx-2 py-2 px-3 hide-behind-profile"
+  >
+    Create Client
+  </button>
+  <img
+    style="visibility: hidden;"
+    height="20px"
+    width="20px"
+    src="/loading-svg/loading-mini.svg"
+    alt="Loading..."
+  />
+</div>
 
 <%- include("footer") -%>

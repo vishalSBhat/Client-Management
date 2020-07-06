@@ -13,10 +13,15 @@
     "node": "8.10.0"
   },
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
+    "helmet": "^3.23.1",
     "moment": "^2.24.0",
-    "mongoose": "^5.9.3"
+    "mongoose": "^5.9.3",
+    "s-age": "^1.1.2"
   }
 }

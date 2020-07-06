@@ -1,227 +1,271 @@
-<%- include("navbar") %>
+<%- include("navbar") -%>
+<%- include("loading") -%>
 
-<div style="max-width: 100%;text-align: left;overflow: hidden;">
-    <div class="mt-lg-4 py-lg-3 pl-lg-4 pr-0 inline advocateCard">
-        <img class="pin" src="/images/pin.png">
-        <div class="mb-2 advocateCard1" style="float: left;">
-            <h3>Name : </h3>
-            <h3>Qualification : </h3>
-            <h3>Address : </h3>
+<div style="position: relative;" class="p-2 container">
+  <div
+    class="m-3 row pushed-in-box hide-behind-profile client-case-detail-container"
+  >
+    <div
+      class="ml-2 py-3 pl-2 pl-sm-3 pr-0 col-11 col-md-6 client-detail-container"
+    >
+      <div class="py-2 pl-3 row client-detail-container">
+        <div class="mb-2 px-0 col-2 col-md-2"><h3>Name :</h3></div>
+        <div class="mb-2 pl-2 pl-md-0 col-7 col-md-9">
+          <h3><%= clientData.fname %> <%= clientData.lname %></h3>
         </div>
-        <div class="ml-2 mb-2 advocateCard2" style="float: left;">
-            <h3><%= lawyerDetails.fname %> <%= lawyerDetails.lname %></h3>
-            <h3><%= lawyerDetails.qualification %></h3>
-            <h3><%= lawyerDetails.address %></h3>
+        <div class="mb-2 px-0 col-4 col-md-3">
+          <h3>Father Name :</h3>
         </div>
-        <div class="col-10 contactDetails">
-            <h3 class="my-1"><b>Contact Details :</b></h3>
-            <div style="clear: both;">
-                <div class="pl-3" style="float: left;">
-                    <h4 class="c1">mail-Id :</h4>
-                </div>
-                <div class="pl-3" style="float: left;">
-                    <h4 class="c2"><%= lawyerDetails.mail %></h4>
-                </div>
-            </div>
-            <div style="clear: both;">
-                <div class="pl-3" style="float: left;">
-                    <h4 class="c1">ph-No :</h4>
-                </div>
-                <div class="pl-3" style="float: left;">
-                    <h4 class="c2"><%= lawyerDetails.phNo %></h4>
-                </div>
-            </div>
+        <div class="mb-2 pl-0 pl-md-2 col-8 col-md-8">
+          <h3><%= clientData.fatherName %></h3>
         </div>
+        <div class="mb-2 px-0 col-2"><h3>Age :</h3></div>
+        <div class="mb-2 px-0 col-7 col-md-10">
+          <h3><%= clientData.age %></h3>
+        </div>
+        <div class="mb-2 px-0 col-5 col-md-4"><h3>Husband Name :</h3></div>
+        <div class="mb-2 px-0 col-5 col-md-6">
+          <h3><%= clientData.husbandName %></h3>
+        </div>
+        <div class="mt-3 mb-2 col-8"><h3>Address :</h3></div>
+        <div class="mb-4 offset-1 col-10">
+          <h3><%= clientData.address %></h3>
+        </div>
+        <div class="mb-2 px-0 col-2"><h3>ph-No :</h3></div>
+        <div class="mb-2 pl-2 pl-md-0 col-9">
+          <h3><%= clientData.phNo %></h3>
+        </div>
+        <div class="mb-2 px-0 col-2"><h3>Tel-No :</h3></div>
+        <div class="mb-2 pl-2 pl-md-0 col-9">
+          <h3><%= clientData.telNo %></h3>
+        </div>
+        <div class="mb-2 px-0 col-3 col-md-2"><h3>mail-Id :</h3></div>
+        <div class="mb-2 pl-0 col-7 col-md-9">
+          <h3><%= clientData.mail %></h3>
+        </div>
+      </div>
     </div>
-    <div class="ml-lg-4 mt-lg-4" style="float: left;">
-        <img src="/images/advocate.png" class="logo cLogo m-0 ml-5 mt-3" alt="Advocate">
-        <h1 class="my-lg-5 ml-lg-3 mx-3 my-3 dBlock">Client Details</h1>
+    <div class="ml-md-auto col-12 col-md-5">
+      <div
+        class="row mt-4 mb-2 mx-2 mr-md-3 ml-md-0 py-3 px-3 case-detail-container"
+      >
+        <h3 class="p-0 mb-3 col-12">Open Case</h3>
+        <h5 class="p-0 col-3 col-sm-2">Title -</h5>
+        <h5 class="p-0 col-8" id="active-case-title">
+          N/A
+        </h5>
+        <h5 class="p-0 col-10">Detail -</h5>
+        <p class="pl-3 col-12" id="active-case-description">
+          N/A
+        </p>
+      </div>
+      <h5 class="mb-3 balance">Total Balance <i class="fas fa-coins"></i></h5>
+      <h5 id="total-balance" class="mb-4">
+        <span class="ml-4 mr-2 px-2 number-holder rupee-logo">&#8377;</span>
+        <% String(clientData.totalBalance).split('').forEach(digit => { %> 
+          <span class="mr-1 px-2 number-holder"><%= digit %></span>
+        <% }); %> 
+      </h5>
     </div>
+  </div>
+  <div class="m-3 row hide-behind-profile">
+    <div class="my-2 p-3 col-12 col-sm-5 pushed-in-box doc-list-container">
+      <%- include("loading-mini") -%>
+      <h5 class="">
+        Documents List
+        <img
+          class="ml-2 mb-1 case-item-open-icon"
+          height="23px"
+          width="23px"
+          src="/icons/icons/file-earmark-text.svg"
+        />
+      </h5>
+      <ul
+        id="document-list"
+        class="pl-3 pl-sm-5 mt-3 list-unstyled doc-list"
+      ></ul>
+      <div class="mx-3 row">
+        <div class="m-0 p-0 col-10 col-sm-9 text-field-container">
+          <input
+            type="text"
+            id="new-doc-name"
+            class="col-12 m-0 p-2"
+            name="docName"
+            required
+          />
+          <span class="text-field-placeholder">Doc. Name</span>
+          <img src="/images/error.jpg" class="error-img" alt="Error" />
+          <span class="mt-1 mb-0 error-message">
+            This field is required
+          </span>
+        </div>
+        <div class="mt-2 col-2 align-self-">
+          <img
+            style="cursor: pointer;"
+            onclick="newDocument()"
+            height="20px"
+            width="20px"
+            src="/icons/icons/file-earmark-plus.svg"
+            alt="Add"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+  style="position: relative"
+    class="m-3 pb-4 row justify-content-center pushed-in-box hide-behind-profile transaction-history-container"
+  >
+  <%- include("loading-mini") -%>
+    <h3 class="col-12 mt-4 mb-3">Transaction History</h3>
+    <div style="text-align: right;" class="p-0 col-11">
+      <p id="active-case-balance">
+      Balance <i class="fas fa-coins"></i>
+      <span class="mx-2 px-2 number-holder rupee-logo">&#8377;</span>
+      <span class="mr-1 px-1 number-holder">0</span>
+    </p>
+  </div>
+    <h5
+      id="advocate-transaction-history" class="mx-3 mb-3 mb-sm-0 py-4 col-10 col-sm-5 transaction-history-header"
+    >
+      My Expenses
+    </h5>
+    <h5 id="client-transaction-history" class="mx-3 py-4 col-10 col-sm-5 transaction-history-header">
+      Client Payments
+    </h5>
+    <div id="advocate-record-list" class="col-12 col-sm-10 mt-3 py-3 transaction-history">
+    </div>
+    <div id="client-record-list" class="col-12 col-sm-10 mt-3 py-3 transaction-history">
+    </div>
+  </div>
+  <div class="mx-3 mt-3 mb-4 row justify-content-center">
+    <div class="col-12 col-sm-10">
+      <div class="m-0 py-0 pr-0 pl-1 pl-sm-2 row horizontal-scroll-holder hide-behind-profile">
+        <img src="/icons/icons/chevron-right.svg" class="mt-2 mr-2 mr-sm-4 horizontal-right-scroll-icon" alt="Scroll"></img>
+        <div class="p-0 ml-3 col-4 col-sm-2 horizontal-left-scroll-icon">
+        <img src="/icons/icons/chevron-left.svg" class="mt-2 mr-sm-4" alt="Scroll"></img>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="m-3 row hide-behind-profile">
+    <div id="new-record-container" class="my-2 col-12 col-sm-6 pushed-in-box">
+      <%- include("loading-mini") -%>
+      <h5 class="mt-3 mb-0 mx-2">Add Transaction &ensp; <img class="mb-2" height="20px" width="20px" src="/icons/icons/journal-plus.svg" /></h5>
+      <div class="pt-3 pb-2 px-4 row">
+        <h4 id="new-record-from-advocate" class="col-3 p-2 mx-1 mx-sm-2 mb-3 new-record-from new-record-from-clicked" data-from="a">Expense</h4>
+        <h4 id="new-record-from-client" class="col-5 col-sm-4 p-2 mx-1 mx-sm-2 mb-3 new-record-from" data-from="c">Client Payment</h4>
+        <div class="mx-1 mx-sm-2 mb-0 mt-3 p-0 col-8 col-sm-6 text-field-container">
+          <input
+            type="date"
+            id="new-record-date"
+            class="col-12 m-0 p-2 new-record-text-field"
+            name="date"
+          />
+          <span class="mt-1 mb-0 error-message">
+            This field is required
+          </span>
+        </div>
+        <div class="my-0 mx-1 mx-sm-2 p-0 col-11 col-sm-8 text-field-container">
+          <textarea
+            style="font-size: 15px; resize: none;"
+            rows="3"
+            type="text"
+            id="new-record-purpose"
+            class="m-0 col-12 p-2"
+            name="purpose"
+            required
+          ></textarea>
+          <span class="text-field-placeholder">Purpose</span>
+          <span class="my-0 mb-0 error-message">
+            This field is required
+          </span>
+        </div>
+        <div class="col-0 col-sm"></div>
+        <div class="my-0 mx-1 mx-sm-2 p-0 col-5 col-sm-3 text-field-container">
+          <input
+            type="text"
+            id="new-record-amount"
+            class="col-12 m-0 number-text-field new-record-text-field"
+            name="amount"
+            required
+          />
+          <span class="text-field-placeholder">Amount</span>
+          <span class="mt-1 mb-0 error-message">
+            Required
+          </span>
+        </div>
+        <button onclick="newRecord()" class="col-3 col-sm-2 ml-3 p-2 align-self-start button">Add</button>
+    </div>
+    </div>
+  </div>
+  <div class="m-3 row hide-behind-profile">
+    <div class="my-2 p-3 col-12 col-sm-5 pushed-in-box case-list-container">
+      <h5 class="">
+        Case List
+        <img
+          class="ml-2 mb-1 case-item-open-icon"
+          height="20px"
+          width="20px"
+          src="/icons/icons/layout-text-window-reverse.svg"
+        />
+      </h5>
+      <ul class="pl-3 mt-3 list-unstyled case-list">
+        <% caseList.reverse().forEach(item => { %>
+        <li class="my-2 case-list-item">
+          <%= item.caseTitle %> &ensp;
+          <img
+            class="case-item-open-icon"
+            onclick="caseOpen('<%= item.caseId %>')"
+            src="/icons/icons/box-arrow-up-right.svg"
+            alt="Open"
+          />
+        </li>
+        <% }); %>
+      </ul>
+      <h5 id="case-count" class="mt-4 mb-0">
+        No. of cases registered : &ensp; <%= clientData.caseCount %>
+      </h5>
+    </div>
+    <div
+      class="my-2 mx-0 mx-sm-4 p-3 col-12 col-sm-5 pushed-in-box new-case-container"
+    >
+    <%- include("loading-mini") -%>
+      <div class="m-0 p-0 col-12 col-sm-10 text-field-container">
+        <input
+          type="text"
+          id="new-case-title"
+          class="col-12 m-0 p-2"
+          name="caseTitle"
+          required
+        />
+        <span class="text-field-placeholder">Case Title</span>
+        <img src="/images/error.jpg" class="error-img" alt="Error" />
+        <span class="mt-1 mb-0 error-message">
+          This field is required
+        </span>
+      </div>
+      <div class="m-0 p-0 col-12 col-sm-10 text-field-container">
+        <textarea
+          style="font-size: 15px; resize: none;"
+          rows="3"
+          type="text"
+          id="new-case-description"
+          class="m-0 col-12 p-2"
+          name="caseDesc"
+          required
+        ></textarea>
+        <span class="text-field-placeholder">Case Description</span>
+        <span class="my-0 mb-0 error-message">
+          This field is required
+        </span>
+      </div>
+      <button onclick="newCase()" class="p-2 button">
+        Register New Case
+      </button>
+    </div>
+  </div>
+  <%- include("profile") %>
 </div>
-<div style="max-width: 100%;text-align: left;">
-    <div class="ml-lg-5 py-0 dBlock mAuto clientCard" style="overflow: hidden;">
-        <div class="mx-lg-5 ml-4 clientCard1" style="float: left;">
-            <h3>Name : </h3>
-            <h3>Father's Name : </h3>
-            <h3>Age : </h3>
-            <h3>Client-Id : </h3>
-            <h3>Address : </h3>
-        </div>
-        <div class="pl-lg-5 clientCard2" style="float: left;">
-            <h3><%= fname %> <%= lname %></h3>
-            <h3><%= fatherName %></h3>
-            <h3><%= age %> </h3>
-            <h3><%= clientId %></h3>
-            <h3><%= address %></h3>
-        </div>
-        <div class="pt-4" style="overflow: hidden;clear: both;">
-            <div class="mx-lg-5 ml-4 mb-5 clientCard1" style="float: left;">
-                <h4> mail-Id : </h4>
-                <h4>Phone Number : </h4>
-            </div>
-            <div class="mb-5 pl-lg-5 clientCard2" style="float: left;">
-                <h4><%= mail %></h4>
-                <h4><%= phNo %></h4>
-            </div>
-        </div>
-    </div>
-    <form class="mx-lg-5 mb-3 mx-3" action="/dummy-two" method="POST">
-        <input type="hidden" name="advocateId" value="<%= lawyerDetails.id %>">
-        <button type="submit" class="phButton mx-lg-5 btn btn-lg btn-dark">Search Client</button>
-    </form>
-</div>
-<hr>
-<div class="mx-lg-5 my-lg-5 px-lg-5 m-3 p-2">
-    <h4 style="cursor: pointer; font-family: 'Baloo Da 2', cursive; font-size: 25px;" data-toggle="collapse" data-target="#docList">Documents List</h4>
-    <div class="m-lg-4 m-2 collapse" id="docList" style="width: fit-content;">
-        <% for(let i=0; i < caseDetails[active].docList.length; ++i){ %>
-        <div class="m-2">
-            <p style="display: inline-block;" id="div<%= i %>" class="my-2 mx-lg-3"
-                data-status="<%= caseDetails[active].docList[i].status %>"><img src="/images/arrow.png"
-                    class="mr-lg-5 mr-2"><%= caseDetails[active].docList[i].docName %><% if(caseDetails[active].docList[i].status === true){ %><img
-                    class="check ml-2 mb-2" src="/images/check.png"><% } %></p>
-            <img id="remDoc<%= i %>" class="removeDoc" src="/images/minus.png" alt="Remove">
-        </div>
-        <% } %>
-        <form onsubmit="return newDoc()" target="frame" action="/docOp" method="POST">
-            <input type="hidden" name="docName" autocomplete="on"/>
-            <input type="hidden" name="docStatus">
-            <input type="text" class="mt-3 p-2 box" placeholder="Enter Document Name">
-            <button onclick="justSet()" type="submit" class="m-3 btn btn-sm dBlock signUpButton">Add
-                Document</button>
-            <input type="hidden" name="clientId" value="<%= clientId %>">
-            <input type="hidden" name="advocateId" value="<%= lawyerDetails.id %>">
-            <input type="hidden" name="active" value="<%= activeId %>">
-        </form>
-    </div>
-</div>
-<div>
-    <div class="dropdown mx-lg-5 mb-lg-5 my-0 mx-3 pl-lg-5 pl-2 caseList">
-        <h3 class="inline">Case List</h3>
-        <img class="m-2 pb-2" src="/images/down.png" type="button" data-toggle="dropdown">
-        <div class="mt-2 dropdown-menu show1">
-            <% for(let i=0; i<caseDetails.length; ++i){ %>
-            <h4 id="<%= i %>" class="dropdown-item"><%= caseDetails[i].caseTitle %></h4>
-            <% } %>
-            <div class="dropdown-divider"></div>
-            <button class="dropdown-item" type="button" onclick="newCase()">Add</button>
-        </div>
-    </div>
-</div>
-<form action="/caseOpen" method="POST" class="caseControl">
-    <input type="hidden" name="caseId" />
-    <input type="hidden" name="clientId" value="<%= clientId %>">
-    <input type="hidden" name="advocateId" value="<%= lawyerDetails.id %>">
-</form>
-<form action="/newCase" method="POST" class="c newCase" style="display: none;">
-    <div>
-        <img title="Close" src="/images/close.png" alt="Close" id="newCaseClose" class="close">
-        <input type="text" name="caseTitle" class="box" placeholder="Case Title" autocomplete="off">
-        <textarea name="caseDesc" class="box address" rows="5" placeholder="Case Description"></textarea>
-        <button type="submit" class="btn btn-lg btn-outline-dark" id="newCaseCreate"
-            style="display: block; margin: 15px auto">Add</button>
-    </div>
-    <input type="hidden" name="clientId" value="<%= clientId %>">
-    <input type="hidden" name="advocateId" value="<%= lawyerDetails.id %>">
-</form>
-<div class="c caseDescBox">
-    <div>
-        <img title="Close" src="/images/close.png" alt="Close" id="popClose" class="close">
-        <% for(let i=0; i<caseDetails.length; ++i){ %>
-        <p id="p<%= i %>" class="popUp caseDesc" style="display: none;"><%= caseDetails[i].caseDesc %></p>
-        <input type="hidden" value="<%= caseDetails[i].caseId %> " />
-        <% } %>
-    </div>
-</div>
 
-<h3 id="recordBalance" class="mx-lg-5 my-lg-0 px-lg-5 mt-3 mx-3 p-2">Total balance = <b><%= caseDetails[active].balance %></b></h3>
-
-<div class="row recDisplay">
-    <h2 class="col-lg-6 col-12 a">Paid by you</h2>
-    <h2 class="col-lg-6 col-12 b">Paid by client</h2>
-</div>
-
-<div class="advocateRec" style="display: none;">
-    <div class="row mAuto thead">
-        <h3 class="col-lg-3 col-3">Date</h3>
-        <h3 class="col-lg-6 col-5">Purpose</h3>
-        <h3 class="col-lg-3 col-4">Amount</h3>
-    </div>
-    <% if(records.advocate.length === 0){ %>
-    <h2 id="noRecordShow1">No records to show</h2>
-    <% }else{ %>
-    <h2 id="noRecordShow1" style="display: none;">No records to show</h2>
-    <% } %>
-    <% for(let i=0; i<records.advocate.length; ++i){ %>
-    <div class="row mAuto tbody">
-        <div class="col-lg-3 titem"><%= records.advocate[i].actualDate %></div>
-        <div class="col-lg-6 titem"><%= records.advocate[i].purpose %></div>
-        <div class="col-lg-3 titem">
-            <b><%= records.advocate[i].amount %></b>
-            <img src="/images/trash.png" alt="Delete" class="delete">
-        </div>
-    </div>
-    <% } %>
-    <button class="phButton m-5 p-2 btn btn-lg btn-dark">New Record</button>
-</div>
-
-<div class="clientRec" style="display: none;">
-    <div class="row mAuto thead">
-        <h3 class="col-lg-3 col-3">Date</h3>
-        <h3 class="col-lg-6 col-5">Purpose</h3>
-        <h3 class="col-lg-3 col-4">Amount</h3>
-    </div>
-    <% if(records.client.length === 0){ %>
-    <h2 id="noRecordShow2">No records to show</h2>
-    <% }else { %>
-    <h2 id="noRecordShow2" style="display: none;">No records to show</h2>
-    <% } %>
-    <% for(let i=0; i<records.client.length; ++i){ %>
-    <div class="row mAuto tbody">
-        <div class="col-3 titem"><%= records.client[i].actualDate %></div>
-        <div class="col-6 titem"><%= records.client[i].purpose %></div>
-        <div class="col-3 titem">
-            <b><%= records.client[i].amount %></b>
-            <img src="/images/trash.png" alt="Delete" class="delete">
-        </div>
-    </div>
-    <% } %>
-    <button class="phButton m-5 p-2 btn btn-lg btn-dark">New Record</button>
-</div>
-
-<div class="c deleteAlert" style="top: 50vh">
-    <div class="">
-        <h3>Are you sure you want to delete??</h3>
-        <button class="btn btn-md btn-outline-dark m-3 py-1 px-4">Yes</button>
-        <button class="btn btn-md btn-outline-dark m-3 py-1 px-4">No</button>
-    </div>
-</div>
-
-<form target="frame" id="deleteRec" action="/delete" method="POST">
-    <input type="hidden" name="paid_by">
-    <input type="hidden" name="date">
-    <input type="hidden" name="purpose">
-    <input type="hidden" name="amount">
-    <input type="hidden" name="clientId" value="<%= clientId %>">
-    <input type="hidden" name="advocateId" value="<%= lawyerDetails.id %>">
-    <input type="hidden" name="active" value="<%= activeId %>">
-</form>
-
-<form onsubmit="return newRecSubmit()" target="frame" class="newRec" action="/newRec" method="POST" style="display: none;">
-    <input id="newRecord" type="hidden" name="paid_by">
-    <img title="Close" class="close" src="/images/close.png" alt="Close">
-    <h2></h2>
-    <input type="text" name="date" class="box" onfocus="(this.type='date')" onblur="(this.type='text')"
-        placeholder="DATE" required>
-    <textarea name="purpose" class="box address" cols="40" rows="3" placeholder="Purpose" required></textarea>
-    <input type="text" name="amount" class="box" autocomplete="off" placeholder="Amount" required>
-    <button type="submit" class="btn btn-sm signUpButton">Add Record</button>
-    <input type="hidden" name="clientId" value="<%= clientId %>">
-    <input type="hidden" name="advocateId" value="<%= lawyerDetails.id %>">
-    <input type="hidden" name="active" value="<%= activeId %>">
-</form>
-
-<iframe name="frame" style="display: none;"></iframe>
-<input id="activeCaseIndex" type="hidden" value="<%= active %> ">
-
-<%- include("footer") %>
+<%- include("footer") -%>
