@@ -3,10 +3,8 @@ $bg-temp: #eaf5ff;
 $box-shadow-dark: #aeaec0;
 $box-shadow-light: #ffffff;
 
-$font-content: "Baloo Thambi 2",
-cursive;
-$font-heading: "Sen",
-sans-serif;
+$font-content: "Baloo Thambi 2", cursive;
+$font-heading: "Sen", sans-serif;
 
 $font-color-title: #cccccc;
 $font-color-heading: #979797;
@@ -25,8 +23,9 @@ $font-size-xs: #{"min(0.8rem, 4vw)"};
   background-color: $bg-color;
   border-radius: $rad;
   cursor: pointer;
-  box-shadow: inset 2px 2px 15px $box-shadow-light, -4px -2px 10px $box-shadow-light,
-    inset 1px 1px 10px $box-shadow-dark, 5px 2px 10px $box-shadow-dark;
+  box-shadow: inset 2px 2px 15px $box-shadow-light,
+    -4px -2px 10px $box-shadow-light, inset 1px 1px 10px $box-shadow-dark,
+    5px 2px 10px $box-shadow-dark;
 
   .icon {
     height: #{"min(5vw, 4vh)"};
@@ -187,8 +186,8 @@ h4 {
 
 #advocate-login {
   box-shadow: inset 10px 10px 50px 3px $box-shadow-light,
-    inset -15px -15px 50px $box-shadow-dark,
-    3px 3px 20px $box-shadow-light, -3px -3px 15px $box-shadow-dark;
+    inset -15px -15px 50px $box-shadow-dark, 3px 3px 20px $box-shadow-light,
+    -3px -3px 15px $box-shadow-dark;
   border-radius: 30px;
   text-align: center;
 }
@@ -244,10 +243,10 @@ h4 {
     visibility: hidden;
   }
 
-  input:focus+.text-field-placeholder,
-  input:not(focus):valid+.text-field-placeholder,
-  textarea:focus+.text-field-placeholder,
-  textarea:not(focus):valid+.text-field-placeholder {
+  input:focus + .text-field-placeholder,
+  input:not(focus):valid + .text-field-placeholder,
+  textarea:focus + .text-field-placeholder,
+  textarea:not(focus):valid + .text-field-placeholder {
     font-size: $font-size-xs;
     top: -9px;
     left: 6px;
@@ -474,14 +473,17 @@ h4 {
 
 .icon-clicked {
   border: 1.5px solid $bg-color;
-  box-shadow: inset 3px 3px 10px $box-shadow-dark, -3px -3px 10px $box-shadow-light,
-    inset -3px -3px 10px $box-shadow-light, 5px 2px 10px $box-shadow-dark;
+  box-shadow: inset 3px 3px 10px $box-shadow-dark,
+    -3px -3px 10px $box-shadow-light, inset -3px -3px 10px $box-shadow-light,
+    5px 2px 10px $box-shadow-dark;
 }
 
 .search-bar-holder {
-  background: linear-gradient(to bottom right,
-      rgba(255, 255, 255, 0.5),
-      rgba(0, 0, 0, 0.1));
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.5),
+    rgba(0, 0, 0, 0.1)
+  );
   border-radius: 12px;
   box-shadow: -5px -5px 15px $box-shadow-light, 5px 5px 15px $box-shadow-dark;
 
@@ -670,11 +672,9 @@ h4 {
   box-shadow: inset 4px 4px 10px $box-shadow-dark,
     -5px -5px 20px $box-shadow-light, inset -5px -5px 10px $box-shadow-light,
     5px 3px 20px $box-shadow-dark;
-
 }
 
 .client-case-detail-container {
-
   .client-detail-container {
     * {
       font-size: #{"min(1.2rem, 4vw)"};
@@ -695,7 +695,6 @@ h4 {
 }
 
 .case-list-container {
-
   .case-list {
     min-height: 120px;
     max-height: 120px;
@@ -737,7 +736,6 @@ h4 {
 }
 
 .doc-list-container {
-
   #document-list {
     display: none;
     max-height: 130px;
@@ -782,7 +780,7 @@ h4 {
 
   &:before {
     cursor: pointer;
-    content: '';
+    content: "";
     height: 18px;
     width: 18px;
     position: absolute;
@@ -797,7 +795,7 @@ h4 {
 
 .doc-check-icon-checked {
   &:before {
-    content: url(/icons/icons/check-all.svg);
+    content: url(/icons/check-all.svg);
   }
 }
 
@@ -834,8 +832,9 @@ h4 {
 }
 
 .transaction-history-header-clicked {
-  box-shadow: 3px 3px 10px $box-shadow-dark, inset -3px -3px 5px $box-shadow-light,
-    inset 3px 3px 5px $box-shadow-dark, -3px -3px 10px $box-shadow-light;
+  box-shadow: 3px 3px 10px $box-shadow-dark,
+    inset -3px -3px 5px $box-shadow-light, inset 3px 3px 5px $box-shadow-dark,
+    -3px -3px 10px $box-shadow-light;
 }
 
 .transaction-history-item {
@@ -862,19 +861,21 @@ h4 {
   position: relative;
   text-align: center;
   border-radius: 0.8em;
-  box-shadow: inset 2px 2px 10px 3px rgba(255, 255, 255, 0.5), -3px -3px 10px $box-shadow-light,
-    inset -2px -2px 10px rgba(0, 0, 0, 0.1), 3px 3px 10px $box-shadow-dark;
+  box-shadow: inset 2px 2px 10px 3px rgba(255, 255, 255, 0.5),
+    -3px -3px 10px $box-shadow-light, inset -2px -2px 10px rgba(0, 0, 0, 0.1),
+    3px 3px 10px $box-shadow-dark;
 }
 
 .new-record-from-clicked {
-  box-shadow: 3px 3px 10px $box-shadow-dark, inset -3px -3px 5px $box-shadow-light,
-    inset 3px 3px 5px $box-shadow-dark, -3px -3px 10px $box-shadow-light;
+  box-shadow: 3px 3px 10px $box-shadow-dark,
+    inset -3px -3px 5px $box-shadow-light, inset 3px 3px 5px $box-shadow-dark,
+    -3px -3px 10px $box-shadow-light;
 
   &:before {
-    content: url(/icons/icons/dot.svg); //'\2022';
+    content: url(/icons/dot.svg); //'\2022';
     position: absolute;
     top: 0.2rem;
-    right: 0.3rem
+    right: 0.3rem;
   }
 }
 
