@@ -909,7 +909,7 @@ h4 {
 }
 
 .doc-check-icon-checked:before {
-  content: url(/icons/check-all.svg);
+  content: url(/Icons/check-all.svg);
 }
 
 .transaction-history {
@@ -999,7 +999,7 @@ h4 {
 }
 
 .new-record-from-clicked:before {
-  content: url(/icons/dot.svg);
+  content: url(/Icons/dot.svg);
   position: absolute;
   top: 0.2rem;
   right: 0.3rem;

@@ -795,7 +795,7 @@ h4 {
 
 .doc-check-icon-checked {
   &:before {
-    content: url(/icons/check-all.svg);
+    content: url(/Icons/check-all.svg);
   }
 }
 
@@ -872,7 +872,7 @@ h4 {
     -3px -3px 10px $box-shadow-light;
 
   &:before {
-    content: url(/icons/dot.svg); //'\2022';
+    content: url(/Icons/dot.svg); //'\2022';
     position: absolute;
     top: 0.2rem;
     right: 0.3rem;

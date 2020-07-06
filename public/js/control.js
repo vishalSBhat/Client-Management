@@ -233,10 +233,10 @@ $('.password-toggler').on('click', e => {
     const ele = $(e.target).attr('data-for');
     if ($(ele).attr('type') === 'password') {
         $(ele).attr('type', 'text');
-        $(e.target).attr('src', './icons/eye-slash-fill.svg')
+        $(e.target).attr('src', './Icons/eye-slash-fill.svg')
     } else {
         $(ele).attr('type', 'password');
-        $(e.target).attr('src', './icons/eye-fill.svg')
+        $(e.target).attr('src', './Icons/eye-fill.svg')
     }
 });
 
@@ -525,7 +525,7 @@ function newCase() {
                     <img
                         class="case-item-open-icon"
                         onclick="caseOpen('${res}')"
-                        src="/icons/box-arrow-up-right.svg"
+                        src="/Icons/box-arrow-up-right.svg"
                         alt="Open"
                     />
                     </li>`);
@@ -548,7 +548,7 @@ function loadDocuments(list) {
                 return `<input class="mr-3 mt-1 doc-check-icon " type="checkbox" />`
         },
         docList = $("#document-list"),
-        icon = "/icons/file-earmark-minus.svg";
+        icon = "/Icons/file-earmark-minus.svg";
 
     docList.slideUp(300);
     setTimeout(() => {
@@ -611,7 +611,7 @@ function slideTransactionTop() {
 function recordItemGenerator(rec) {
     return (
         `<div class="row ml-3 mr-1 mb-3 pb-2 transaction-history-item">
-        <h5 class="col-5 col-sm-2 mr-2 mt-1 p-0 transaction-date"><img onclick="deleteRecord('${rec._id}')" class="mr-1 transaction-del-icon" src="/icons/trash.svg" alt="Delete" /> ${rec.date}</h5>
+        <h5 class="col-5 col-sm-2 mr-2 mt-1 p-0 transaction-date"><img onclick="deleteRecord('${rec._id}')" class="mr-1 transaction-del-icon" src="/Icons/trash.svg" alt="Delete" /> ${rec.date}</h5>
         <div class="ml-3 ml-sm-2 p-0 col scrollable-box">
           <p class="m-0 p-0 scrollable-item transaction-purpose">
             ${rec.purpose}
